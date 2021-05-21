@@ -1,0 +1,49 @@
+<div class="col-md-6 offset-md-3 col-sm-12">
+    <div class="row mb-3">
+        <div class="col-6">
+            <input type="text" [(ngModel)]="searchValue" class="form-control" id="search" placeholder="Search Contacts" />
+        </div>
+        <div class="col-6">
+            <button type="button" class="btn btn-success float-end" [routerLink]="['/contacts/create']"><i class="bi bi-plus-lg"></i> New Contact</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">    
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let contact of contacts | searchfilter:searchValue">
+                    <div class="row">
+                        <div class="col-8">
+                            <h6 class="card-title">{{contact.name}}</h6>
+                            <p class="card-text text-muted mb-0">{{contact.phone}}</p>
+                            <p class="card-text text-muted mb-2">{{contact.email}}</p>
+                        </div>
+                        <div class="col-4">
+                            <div class="btn-group float-end" role="group">
+                                <button type="button" class="btn btn-sm btn-light text-danger" (click)="openModal(mymodal, contact)"><i class="bi bi-trash"></i> Delete</button>
+                                <button type="button" class="btn btn-sm btn-warning" [routerLink]="['/contacts/update/', contact.id]"><i class="bi bi-pencil-square"></i> Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="alert alert-info" role="alert" *ngIf="contacts.length==0">
+                You have no contacts currently.
+            </div>
+        </div>
+    </div>
+
+    <ng-template #mymodal let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Delete Contact</h4>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete "{{contactData.name}}"?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="decline()">Cancel</button>
+            <button type="button" class="btn btn-danger" (click)="confirm(contactData)">Delete</button>
+        </div>
+    </ng-template>
+</div>

@@ -1,14 +1,24 @@
 # Angular9Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.15.
+[Angular CLI](https://github.com/angular/angular-cli) version 9.1.15.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Routes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Based on the previous `contacts.json` file, here are all the default routes. You can also add [other routes]
+
+### Contact routes
+
+```
+GET    /contacts
+GET    /contacts/1
+POST   /contacts
+PUT    /contacts/1
+DELETE /contacts/1
+```
 
 ## Build
 

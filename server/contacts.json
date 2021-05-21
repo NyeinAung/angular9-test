@@ -1,0 +1,16 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Mg Zaw",
+      "email": "mgzaw@gmail.com",
+      "phone": "(+95)912345678"
+    },
+    {
+      "id": 2,
+      "name": "Aung Aung",
+      "email": "aungaung@gmail.com",
+      "phone": "(+95)912345678"
+    }
+  ]
+}
